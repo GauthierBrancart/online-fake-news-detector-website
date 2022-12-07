@@ -1,4 +1,3 @@
 streamlit
 requests
 nltk
-nltk-punkt==1.0.0
