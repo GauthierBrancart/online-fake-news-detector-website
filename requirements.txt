@@ -1,4 +1,4 @@
 streamlit
-time
 requests
-predict
+nltk
+nltk-punkt==1.0.0
