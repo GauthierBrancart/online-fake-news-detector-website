@@ -11,7 +11,8 @@ url_input = st.text_input(
         label_visibility="visible")
 
 params = {"text_or_url": url_input}
-url = "https://dockerapi-6uhfgb5xra-ew.a.run.app"
+BASE_URI = "https://dockerapi-6uhfgb5xra-ew.a.run.app"
+url = f"{BASE_URI}/pred"
 response = requests.get(url=url, params=params).json()
 
 result = st.button('Ask the bat ℹ️')
