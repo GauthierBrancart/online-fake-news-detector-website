@@ -6,7 +6,7 @@ from classifier import label
 # BASE_URI = "https://dockerapi-6uhfgb5xra-ew.a.run.app/"
 # BASE_URI = os.getenv('BASE_URI')
 BASE_URI = st.secrets['BASE_URI']
-BASE_URI = 'http://localhost:8080'
+# BASE_URI = 'http://localhost:8080'
 
 # st.write(BASE_URI)
 # st.write(st.secrets)
