@@ -1,10 +1,13 @@
 import os
 import streamlit as st
 import requests
+from classifier import label
 
 # BASE_URI = "https://dockerapi-6uhfgb5xra-ew.a.run.app/"
 # BASE_URI = os.getenv('BASE_URI')
 BASE_URI = st.secrets['BASE_URI']
+BASE_URI = 'http://localhost:8080'
+
 # st.write(BASE_URI)
 # st.write(st.secrets)
 
@@ -22,7 +25,8 @@ if st.button('Ask the bat ℹ️'):
     else:
         with st.spinner('🧠 Shhht. Let her think...'):
             params = {"text_or_url": url_input}
-            url = f"{BASE_URI}/pred"
+            url = f"{BASE_URI}/predproba"
             response = requests.get(url=url, params=params).json()
-
-        st.success(response)
+            result = float(response['proba'])
+        # st.success(response)
+        st.success(label(result))
